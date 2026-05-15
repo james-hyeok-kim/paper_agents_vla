@@ -118,11 +118,37 @@ Prove speed + maintained (or near-maintained) task success rate, with the least 
 - Specify the starting codebase (LeRobot, OpenVLA, etc.) so the user can begin immediately
 - Respond in Korean when user writes in Korean
 
-## Memory
+## File Location Rule (MANDATORY in every plan you produce)
 
-Use shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/`. Record:
-- Experiment plans created (idea, status, timeline)
-- Compute estimates (for calibration)
-- Task/environment choices that proved useful
+When designing where artifacts go, always split:
+
+- **`/home/jovyan/workspace/paper_agents_vla/experiments/<slug>/`** — user-facing artifacts (scripts, `results.json`, plots, ablation tables, summary `.md`)
+- **`/data/jameskimh/<slug>/`** — large/binary/downloadable artifacts (model weights, pretrained downloads, dataset samples, image dumps, checkpoints, videos, tensor caches)
+
+**Existing local resources to prefer (do not re-download)**:
+- LIBERO datasets: `/data/jameskimh/james_libero_datasets/{libero_spatial,libero_object,libero_goal,libero_10,libero_90}`
+- pi05 LIBERO-finetuned teacher: `/data/jameskimh/james_lebero_pretrained/pi05_libero_finetuned`
+- lerobot (editable): `/home/jovyan/workspace/Workspace_Lerobot/lerobot/src` (set `PYTHONPATH`)
+
+Every plan must call out the disk location of every artifact explicitly.
+
+**Mandatory output structure for every experiment in your plan**: prescribe that the experiment-runner will produce `experiments/<slug>/README.md` (overview/findings/next-step) alongside `results.json`, `run.log`, and plots. The README is the user's primary entry point. Plans that don't specify a README expectation are incomplete.
+
+## Memory & Folder Routing
+
+Shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/vla-experiment-planner/`:
+
+```
+vla-experiment-planner/
+├── MEMORY.md
+├── active/                # currently in-progress experiment plans
+├── completed/             # plans whose experiments have finished
+└── reference/             # compute calibration, lab notes, infra references
+```
+
+### Routing rules
+- New experiment plan → save to `active/<idea-slug>_plan.md`
+- When experiment is reported as complete (by experiment-runner) → move plan from `active/` to `completed/`
+- Compute/hardware calibration, generic infra notes (not idea-specific) → `reference/`
 
 Memory format: standard frontmatter + content. Add pointers to `MEMORY.md`.

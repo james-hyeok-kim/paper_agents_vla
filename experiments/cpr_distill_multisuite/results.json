@@ -1,0 +1,199 @@
+{
+  "elapsed_sec": 581.636559009552,
+  "device": "cuda:0",
+  "suites_tested": [
+    "libero_spatial",
+    "libero_object",
+    "libero_goal",
+    "libero_10"
+  ],
+  "factors_tested": [
+    1.0,
+    1.5,
+    3.0
+  ],
+  "results": {
+    "libero_spatial": {
+      "factor_1.0": {
+        "all": 0.676379197863495,
+        "contact": 0.8685466742315212,
+        "free": 0.5925563100004251,
+        "rot_contact": 0.011057772634535277,
+        "rot_free": 0.008772085963792135,
+        "trans_contact": 0.45851889678410124,
+        "trans_free": 0.41241284050346105,
+        "n_contact": 1904,
+        "n_free": 4365,
+        "contact_gain_pct": 0.0,
+        "free_gain_pct": 0.0,
+        "overall_gain_pct": 0.0
+      },
+      "factor_1.5": {
+        "all": 0.6807399670042135,
+        "contact": 0.8127072097874489,
+        "free": 0.6231762443621134,
+        "rot_contact": 0.010796579508846547,
+        "rot_free": 0.008923199946937693,
+        "trans_contact": 0.42202504943398866,
+        "trans_free": 0.43661473854300903,
+        "n_contact": 1904,
+        "n_free": 4365,
+        "contact_gain_pct": 6.429068937887342,
+        "free_gain_pct": -5.167430309140804,
+        "overall_gain_pct": -0.6447225394413383
+      },
+      "factor_3.0": {
+        "all": 0.7150958352234208,
+        "contact": 0.7239674229581817,
+        "free": 0.7112260676468087,
+        "rot_contact": 0.01056022010743618,
+        "rot_free": 0.009375773180801024,
+        "trans_contact": 0.3677941906352003,
+        "trans_free": 0.49602742932506444,
+        "n_contact": 1904,
+        "n_free": 4365,
+        "contact_gain_pct": 16.64611189735558,
+        "free_gain_pct": -20.026747777995734,
+        "overall_gain_pct": -5.724102320447102
+      }
+    },
+    "libero_object": {
+      "factor_1.0": {
+        "all": 0.5205186062023787,
+        "contact": 0.7480322890325424,
+        "free": 0.42136229614599474,
+        "rot_contact": 0.004659661298634809,
+        "rot_free": 0.004268362307872643,
+        "trans_contact": 0.21066911690825715,
+        "trans_free": 0.20760841400134283,
+        "n_contact": 2180,
+        "n_free": 5002,
+        "contact_gain_pct": 0.0,
+        "free_gain_pct": 0.0,
+        "overall_gain_pct": 0.0
+      },
+      "factor_1.5": {
+        "all": 0.5358171056685292,
+        "contact": 0.7388079144539089,
+        "free": 0.4473485149702326,
+        "rot_contact": 0.004632079404770235,
+        "rot_free": 0.00438817842204015,
+        "trans_contact": 0.20266689947985728,
+        "trans_free": 0.21924551445596077,
+        "n_contact": 2180,
+        "n_free": 5002,
+        "contact_gain_pct": 1.2331519259100001,
+        "free_gain_pct": -6.167191289282816,
+        "overall_gain_pct": -2.9390879180604155
+      },
+      "factor_3.0": {
+        "all": 0.5577606386011007,
+        "contact": 0.7241185617009435,
+        "free": 0.48525758153769744,
+        "rot_contact": 0.0045499134860044225,
+        "rot_free": 0.004514620977132524,
+        "trans_contact": 0.19440459352020822,
+        "trans_free": 0.24164002649977606,
+        "n_contact": 2180,
+        "n_free": 5002,
+        "contact_gain_pct": 3.196884370128917,
+        "free_gain_pct": -15.163977882246037,
+        "overall_gain_pct": -7.154793691321432
+      }
+    },
+    "libero_goal": {
+      "factor_1.0": {
+        "all": 0.6609861622997634,
+        "contact": 0.9010562926269279,
+        "free": 0.5564647184969147,
+        "rot_contact": 0.023793053822414003,
+        "rot_free": 0.012500818464616145,
+        "trans_contact": 0.48285756729039325,
+        "trans_free": 0.34876902265799503,
+        "n_contact": 1937,
+        "n_free": 4449,
+        "contact_gain_pct": 0.0,
+        "free_gain_pct": 0.0,
+        "overall_gain_pct": 0.0
+      },
+      "factor_1.5": {
+        "all": 0.6646178819302142,
+        "contact": 0.8588029647772005,
+        "free": 0.5800738335727547,
+        "rot_contact": 0.022534545028277383,
+        "rot_free": 0.013040432650792676,
+        "trans_contact": 0.45055983075174894,
+        "trans_free": 0.36634152207274895,
+        "n_contact": 1937,
+        "n_free": 4449,
+        "contact_gain_pct": 4.689310556451756,
+        "free_gain_pct": -4.242697567531563,
+        "overall_gain_pct": -0.549439585514926
+      },
+      "factor_3.0": {
+        "all": 0.6807636591919978,
+        "contact": 0.7946437841601512,
+        "free": 0.631182680239327,
+        "rot_contact": 0.020787121465542173,
+        "rot_free": 0.01371653949740121,
+        "trans_contact": 0.4072656173587892,
+        "trans_free": 0.402002719151194,
+        "n_contact": 1937,
+        "n_free": 4449,
+        "contact_gain_pct": 11.809751437009888,
+        "free_gain_pct": -13.427259493510292,
+        "overall_gain_pct": -2.992119657002006
+      }
+    },
+    "libero_10": {
+      "factor_1.0": {
+        "all": 0.44853163361593273,
+        "contact": 0.5436842212153644,
+        "free": 0.40737479944648664,
+        "rot_contact": 0.010864698401674991,
+        "rot_free": 0.00907815146929152,
+        "trans_contact": 0.2696247744269487,
+        "trans_free": 0.21544410926101706,
+        "n_contact": 4100,
+        "n_free": 9479,
+        "contact_gain_pct": 0.0,
+        "free_gain_pct": 0.0,
+        "overall_gain_pct": 0.0
+      },
+      "factor_1.5": {
+        "all": 0.4693929025197874,
+        "contact": 0.5434307033259694,
+        "free": 0.4373689559532477,
+        "rot_contact": 0.010650087605889251,
+        "rot_free": 0.009347398565444077,
+        "trans_contact": 0.27038356216942394,
+        "trans_free": 0.2367108177316253,
+        "n_contact": 4100,
+        "n_free": 9479,
+        "contact_gain_pct": 0.04662962055957099,
+        "free_gain_pct": -7.362791352708883,
+        "overall_gain_pct": -4.651013962087157
+      },
+      "factor_3.0": {
+        "all": 0.4738380938990055,
+        "contact": 0.5040128065318596,
+        "free": 0.46078647155150015,
+        "rot_contact": 0.009736145625754101,
+        "rot_free": 0.010400754365504498,
+        "trans_contact": 0.24699989156025212,
+        "trans_free": 0.2559335223480749,
+        "n_contact": 4100,
+        "n_free": 9479,
+        "contact_gain_pct": 7.2967750645443346,
+        "free_gain_pct": -13.111187088053972,
+        "overall_gain_pct": -5.642068114362274
+      }
+    }
+  },
+  "sweet_spot_counts": {
+    "1.0": 4,
+    "1.5": 0,
+    "3.0": 0
+  },
+  "verdict": "\u274c 1.5\u00d7 does not generalize \u2014 sweet spot shifts per suite"
+}

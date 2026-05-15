@@ -1,0 +1,189 @@
+{
+  "elapsed_sec": 102.17817163467407,
+  "device": "cuda:0",
+  "config": {
+    "n_epochs": 3,
+    "batch_size": 256,
+    "data_dir": "/data/jameskimh/james_libero_datasets/libero_spatial",
+    "n_task_files": 10,
+    "train_size": 55970,
+    "val_size": 6280,
+    "contact_window": 3,
+    "reweight_factor": 3.0
+  },
+  "final_results": {
+    "A_l2_naive": {
+      "all": 0.6633775954033918,
+      "contact": 0.8434726907022344,
+      "free": 0.584781665924156,
+      "rot_contact": 0.011953326328745429,
+      "rot_free": 0.008106498574294416,
+      "trans_contact": 0.4357795780309841,
+      "trans_free": 0.4032537036278001,
+      "n_contact": 1908.0,
+      "n_free": 4372.0
+    },
+    "B_cpr_3x": {
+      "all": 0.699362250650005,
+      "contact": 0.6991342788472366,
+      "free": 0.6994617266711682,
+      "rot_contact": 0.011662270186519722,
+      "rot_free": 0.008542401724633882,
+      "trans_contact": 0.35208115637677273,
+      "trans_free": 0.48896700116547553,
+      "n_contact": 1908.0,
+      "n_free": 4372.0
+    },
+    "C_sham_uniform_3x": {
+      "all": 0.6643475064806118,
+      "contact": 0.8430970129976733,
+      "free": 0.5863387988230992,
+      "rot_contact": 0.012136294305387034,
+      "rot_free": 0.008151532541909354,
+      "trans_contact": 0.4420500331454807,
+      "trans_free": 0.4031506998213954,
+      "n_contact": 1908.0,
+      "n_free": 4372.0
+    },
+    "D_l2_fixed_only": {
+      "all": 0.6570715302874328,
+      "contact": 0.8415237582704556,
+      "free": 0.576574082998431,
+      "rot_contact": 0.012011935610316335,
+      "rot_free": 0.008071030974933453,
+      "trans_contact": 0.4386822722492978,
+      "trans_free": 0.3971762277615365,
+      "n_contact": 1908.0,
+      "n_free": 4372.0
+    }
+  },
+  "improvement_rows": [
+    {
+      "tag": "B_cpr_3x",
+      "gain_all_pct": -5.4244604424319425,
+      "gain_contact_pct": 17.11239894854553,
+      "gain_free_pct": -19.610748323612075,
+      "specificity_x": 0.872603013080258
+    },
+    {
+      "tag": "C_sham_uniform_3x",
+      "gain_all_pct": -0.14620799435202617,
+      "gain_contact_pct": 0.04453940343324919,
+      "gain_free_pct": -0.2662759436006615,
+      "specificity_x": 0.16726721747281822
+    },
+    {
+      "tag": "D_l2_fixed_only",
+      "gain_all_pct": 0.9505996523931972,
+      "gain_contact_pct": 0.23106052552291442,
+      "gain_free_pct": 1.403529454493787,
+      "specificity_x": 0.164628081124361
+    }
+  ],
+  "gates": {
+    "A_cpr_reduces_contact_mse": true,
+    "B_cpr_beats_sham_by_2pp": true,
+    "C_contact_specific": true,
+    "delta_B_vs_C_contact_gain_pp": 17.06785954511228,
+    "B_contact_gain_pct": 17.11239894854553,
+    "C_contact_gain_pct": 0.04453940343324919,
+    "B_free_gain_pct": -19.610748323612075
+  },
+  "verdict": "M0 SMOKE TEST: PASS \u2014 proceed to W1 (full ActDistill setup)",
+  "checkpoint_paths": {
+    "A_l2_naive": "/data/jameskimh/cpr_distill_m0/A_l2_naive.pt",
+    "B_cpr_3x": "/data/jameskimh/cpr_distill_m0/B_cpr_3x.pt",
+    "C_sham_uniform_3x": "/data/jameskimh/cpr_distill_m0/C_sham_uniform_3x.pt",
+    "D_l2_fixed_only": "/data/jameskimh/cpr_distill_m0/D_l2_fixed_only.pt"
+  },
+  "histories": {
+    "A_l2_naive": {
+      "train_loss": [
+        1.1768455308634234,
+        0.7810574006859652,
+        0.6677730228659381
+      ],
+      "val_action_mse": [
+        0.898890846398226,
+        0.6908331038845572,
+        0.6633775954033918
+      ],
+      "val_action_mse_contact": [
+        0.980846059147417,
+        0.8486574940711448,
+        0.8434726907022344
+      ],
+      "val_action_mse_free": [
+        0.8631244879301163,
+        0.6219564003346715,
+        0.584781665924156
+      ]
+    },
+    "B_cpr_3x": {
+      "train_loss": [
+        1.8483137769232227,
+        1.259928596332837,
+        1.1591316541944718
+      ],
+      "val_action_mse": [
+        1.0148250482644245,
+        0.7149729479650023,
+        0.699362250650005
+      ],
+      "val_action_mse_contact": [
+        1.0743581324003528,
+        0.7020257384022327,
+        0.6991342788472366
+      ],
+      "val_action_mse_free": [
+        0.98884401556994,
+        0.7206232938216787,
+        0.6994617266711682
+      ]
+    },
+    "C_sham_uniform_3x": {
+      "train_loss": [
+        3.641241809881775,
+        2.2176384300424816,
+        2.014039425613924
+      ],
+      "val_action_mse": [
+        0.9077022916951757,
+        0.6906499170194006,
+        0.6643475064806118
+      ],
+      "val_action_mse_contact": [
+        1.1182375833923213,
+        0.8899594192984719,
+        0.8430970129976733
+      ],
+      "val_action_mse_free": [
+        0.8158218369828597,
+        0.6036685339813372,
+        0.5863387988230992
+      ]
+    },
+    "D_l2_fixed_only": {
+      "train_loss": [
+        1.2307571004304754,
+        0.740705355710593,
+        0.6647374454493691
+      ],
+      "val_action_mse": [
+        0.7629865318346934,
+        0.6923948749615129,
+        0.6570715302874328
+      ],
+      "val_action_mse_contact": [
+        1.0690982186819273,
+        0.8958926210863285,
+        0.8415237582704556
+      ],
+      "val_action_mse_free": [
+        0.6293952554491606,
+        0.6035856890874725,
+        0.576574082998431
+      ]
+    }
+  }
+}

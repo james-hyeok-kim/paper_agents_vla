@@ -1,0 +1,123 @@
+{
+  "elapsed_sec": 72.98214221000671,
+  "device": "cuda:0",
+  "results": {
+    "contact_rich__l2_naive__reweight_False": {
+      "rot_overall_rad": 0.10348669439554214,
+      "rot_contact_rad": 0.12647368013858795,
+      "rot_free_rad": 0.08049970865249634,
+      "trans_overall_mse": 0.0015076047275215387,
+      "trans_contact_mse": 0.001654527266509831,
+      "trans_free_mse": 0.0013606820721179247,
+      "grip_acc": 0.7203999757766724
+    },
+    "contact_rich__l2_naive__reweight_True": {
+      "rot_overall_rad": 0.09411171078681946,
+      "rot_contact_rad": 0.08743453025817871,
+      "rot_free_rad": 0.1007888913154602,
+      "trans_overall_mse": 0.0015562220942229033,
+      "trans_contact_mse": 0.0013257777318358421,
+      "trans_free_mse": 0.0017866668058559299,
+      "grip_acc": 0.7011999487876892
+    },
+    "contact_rich__l2_fixed__reweight_False": {
+      "rot_overall_rad": 0.1008264496922493,
+      "rot_contact_rad": 0.10686498880386353,
+      "rot_free_rad": 0.09478790313005447,
+      "trans_overall_mse": 0.0015015986282378435,
+      "trans_contact_mse": 0.0016954665770754218,
+      "trans_free_mse": 0.001307730795815587,
+      "grip_acc": 0.6942999362945557
+    },
+    "contact_rich__l2_fixed__reweight_True": {
+      "rot_overall_rad": 0.08876129239797592,
+      "rot_contact_rad": 0.05931708216667175,
+      "rot_free_rad": 0.11820550262928009,
+      "trans_overall_mse": 0.0015450587961822748,
+      "trans_contact_mse": 0.0014528143219649792,
+      "trans_free_mse": 0.001637302921153605,
+      "grip_acc": 0.6935999989509583
+    },
+    "contact_rich__so3_geodesic__reweight_False": {
+      "rot_overall_rad": 0.08984731137752533,
+      "rot_contact_rad": 0.09032279253005981,
+      "rot_free_rad": 0.08937183767557144,
+      "trans_overall_mse": 0.0030809324234724045,
+      "trans_contact_mse": 0.003950685262680054,
+      "trans_free_mse": 0.0022111795842647552,
+      "grip_acc": 0.6775000095367432
+    },
+    "contact_rich__so3_geodesic__reweight_True": {
+      "rot_overall_rad": 0.09232835471630096,
+      "rot_contact_rad": 0.061480045318603516,
+      "rot_free_rad": 0.12317665666341782,
+      "trans_overall_mse": 0.0028484840877354145,
+      "trans_contact_mse": 0.00325766415335238,
+      "trans_free_mse": 0.002439304022118449,
+      "grip_acc": 0.682200014591217
+    },
+    "contact_poor__l2_naive__reweight_False": {
+      "rot_overall_rad": 0.05268125981092453,
+      "rot_contact_rad": null,
+      "rot_free_rad": 0.05268125981092453,
+      "trans_overall_mse": 0.0015094846021384,
+      "trans_contact_mse": null,
+      "trans_free_mse": 0.0015094846021384,
+      "grip_acc": 0.7231999635696411
+    },
+    "contact_poor__l2_naive__reweight_True": {
+      "rot_overall_rad": 0.05268125981092453,
+      "rot_contact_rad": null,
+      "rot_free_rad": 0.05268125981092453,
+      "trans_overall_mse": 0.0015094846021384,
+      "trans_contact_mse": null,
+      "trans_free_mse": 0.0015094846021384,
+      "grip_acc": 0.7231999635696411
+    },
+    "contact_poor__l2_fixed__reweight_False": {
+      "rot_overall_rad": 0.055091600865125656,
+      "rot_contact_rad": null,
+      "rot_free_rad": 0.055091600865125656,
+      "trans_overall_mse": 0.0013157614739611745,
+      "trans_contact_mse": null,
+      "trans_free_mse": 0.0013157614739611745,
+      "grip_acc": 0.702299952507019
+    },
+    "contact_poor__l2_fixed__reweight_True": {
+      "rot_overall_rad": 0.055091600865125656,
+      "rot_contact_rad": null,
+      "rot_free_rad": 0.055091600865125656,
+      "trans_overall_mse": 0.0013157614739611745,
+      "trans_contact_mse": null,
+      "trans_free_mse": 0.0013157614739611745,
+      "grip_acc": 0.702299952507019
+    },
+    "contact_poor__so3_geodesic__reweight_False": {
+      "rot_overall_rad": 0.05171475559473038,
+      "rot_contact_rad": null,
+      "rot_free_rad": 0.05171475559473038,
+      "trans_overall_mse": 0.0026922128163278103,
+      "trans_contact_mse": null,
+      "trans_free_mse": 0.0026922128163278103,
+      "grip_acc": 0.6677999496459961
+    },
+    "contact_poor__so3_geodesic__reweight_True": {
+      "rot_overall_rad": 0.05171475559473038,
+      "rot_contact_rad": null,
+      "rot_free_rad": 0.05171475559473038,
+      "trans_overall_mse": 0.0026922128163278103,
+      "trans_contact_mse": null,
+      "trans_free_mse": 0.0026922128163278103,
+      "grip_acc": 0.6677999496459961
+    }
+  },
+  "deltas": {
+    "contact_rich_contact_phase_deg": 3.723860970399618,
+    "contact_rich_free_phase_deg": -2.4452090035250347,
+    "contact_poor_overall_deg": 0.055376612469524744,
+    "specificity_ratio": 67.2448811773697
+  },
+  "verdict": "FEASIBILITY: PASS \u2014 mechanism specificity confirmed in synthetic data",
+  "pass_gate_a_so3_helps_contact": true,
+  "pass_gate_b_specificity": true
+}

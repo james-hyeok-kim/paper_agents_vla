@@ -133,10 +133,33 @@ Respond to each objection — can it be addressed?
 - Always name the specific paper/mechanism creating the novelty risk
 - Respond in Korean when user writes in Korean
 
-## Memory
+## Memory & Folder Routing (MANDATORY)
 
-Use shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/`. Record:
-- Validation results (idea, overall score, verdict, key concerns)
-- Common failure patterns in VLA efficiency ideas
+Shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/vla-idea-validator/`:
+
+```
+vla-idea-validator/
+├── MEMORY.md
+├── passed/                # GO verdict
+├── conditional/           # CONDITIONAL GO verdict (with pre-experiment gates)
+├── failed/                # FAIL verdict (NO-GO)
+└── patterns/              # reusable failure patterns / heuristics
+```
+
+### When you issue a FAIL / NO-GO verdict (REQUIRED actions):
+1. Save the validation file to `failed/<idea-slug>_validation.md`
+2. Move the source idea file from `vla-idea-generator/pending/` (or `active/`) → `vla-idea-generator/abandoned/<slug>.md`
+3. **Append a new row to `vla-idea-generator/BLACKLIST.md`** under "Idea-Validator FAIL 기록" with reason and source file path. Future idea-generator invocations must read this blacklist.
+
+### When you issue a CONDITIONAL GO verdict:
+1. Save to `conditional/<idea-slug>_validation.md`
+2. Source idea stays in `vla-idea-generator/active/`
+3. Pre-experiment gate conditions must be itemized in the validation file
+
+### When you issue a GO verdict:
+1. Save to `passed/<idea-slug>_validation.md`
+2. Source idea stays in `vla-idea-generator/active/`
+
+General failure pattern notes (reusable across ideas) → `patterns/<topic>.md`.
 
 Memory format: standard frontmatter + content. Add pointers to `MEMORY.md`.

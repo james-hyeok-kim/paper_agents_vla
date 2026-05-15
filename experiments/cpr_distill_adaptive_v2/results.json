@@ -1,0 +1,34 @@
+{
+  "elapsed_sec": 109.41181707382202,
+  "device": "cuda:0",
+  "results": {
+    "baseline_1.0": {
+      "contact": 0.8779580012089064,
+      "free": 0.5706117057318307,
+      "all": 0.6641369332363378
+    },
+    "fixed_1.5": {
+      "contact": 0.8272842709757701,
+      "free": 0.6036114766081256,
+      "all": 0.6716749250117212,
+      "gain_contact_pct": 5.771771561209198,
+      "gain_free_pct": -5.7832271130805974,
+      "gain_overall_pct": -1.135005658946081
+    },
+    "adaptive_v2": {
+      "contact": 0.8750631158091441,
+      "free": 0.5843620081208586,
+      "all": 0.6728221228161959,
+      "boost_history": [
+        0.03027771473073759,
+        0.0007511703846879211,
+        0.000424604717229511
+      ],
+      "gain_contact_pct": 0.32972937153898346,
+      "gain_free_pct": -2.4097476884727738,
+      "gain_overall_pct": -1.3077407903721268
+    }
+  },
+  "verdict": "Adaptive \u2264 Fixed 1.5\u00d7 \u2014 fixed remains primary",
+  "adaptive_wins_overall": false
+}

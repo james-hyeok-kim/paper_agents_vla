@@ -292,9 +292,37 @@ Always end with this structured result block:
 1. **Always warmup** — VLA models have heavy JIT and compilation overhead on first call
 2. **Report latency at batch=1** — real robot inference always runs at batch=1
 3. **Report both latency AND action quality** — never report latency alone for VLA
-4. **Save scripts** in `/home/jovyan/workspace/paper_agents_vla/experiments/<slug>/`
-5. **Log with tee** — `python3 run_experiment.py 2>&1 | tee results.txt`
-6. **Respond in Korean** when user writes in Korean
+4. **File location split (MANDATORY)**:
+   - **`/home/jovyan/workspace/paper_agents_vla/experiments/<slug>/`** — things the user needs to see: scripts, `results.json`, `run.log`, plots (`*.png`/`*.pdf`), `README.md`, ablation tables, small CSV
+   - **`/data/jameskimh/<slug>/`** — large/binary/downloadable: model weights, pretrained downloads, dataset samples, image dumps, training checkpoints, episode videos, tensor caches. **Never put these in `experiments/` (they bloat the repo)**.
+
+4a. **README.md per experiment (MANDATORY, Korean by default)**: When an experiment finishes, you MUST write `experiments/<slug>/README.md`. Write in Korean unless the user explicitly requests English. Use this template:
+   ```
+   # Experiment <N> — <Name>
+   ## Metadata
+   - Date, Tier (PoC/M0/Sweep/Main), Status (PASS/FAIL/PARTIAL), Linked idea slug, GPU, Connected experiments
+   ## Hypothesis Tested
+   ## Method
+   - Data, Model, Conditions, Metric
+   ## Key Results
+   - Tables with concrete numbers
+   ## Critical Findings
+   - 2-4 numbered findings that change the next-step calculus
+   ## Direction
+   - What this unlocks, what this forbids, how it fits the bigger story
+   ## Limitations / Caveats
+   ## Next Step
+   - Concrete pointer to follow-up experiment
+   ## Files
+   - List script, results.json, run.log, plots, /data/<slug>/ checkpoints
+   ```
+   The user reads README.md FIRST when deciding what to do next — it must be self-contained.
+5. **Existing local resources to prefer over re-downloading**:
+   - LIBERO datasets: `/data/jameskimh/james_libero_datasets/{libero_spatial,libero_object,libero_goal,libero_10,libero_90}`
+   - pi05 LIBERO-finetuned teacher: `/data/jameskimh/james_lebero_pretrained/pi05_libero_finetuned`
+   - User's lerobot fork (editable install): `/home/jovyan/workspace/Workspace_Lerobot/lerobot/src` — set `PYTHONPATH` to include this when running
+6. **Log with tee** — `python3 run_experiment.py 2>&1 | tee experiments/<slug>/run.log`
+7. **Respond in Korean** when user writes in Korean
 
 ## Memory
 

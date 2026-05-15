@@ -1,0 +1,47 @@
+{
+  "elapsed_sec": 154.3469967842102,
+  "device": "cuda:0",
+  "results": {
+    "baseline_factor1.0": {
+      "contact": 0.8417558615320849,
+      "free": 0.5501553274658925,
+      "all": 0.6386604333240975
+    },
+    "gripper_transition": {
+      "contact": 0.7846850503156381,
+      "free": 0.5849842991604537,
+      "all": 0.6455964456259865,
+      "mask_density": 0.30524224042892456,
+      "contact_gain_pct": 6.779971940150429
+    },
+    "gt_ee_velocity_drop": {
+      "contact": 0.8449479353322172,
+      "free": 0.5638244934151405,
+      "all": 0.6491496476891525,
+      "mask_density": 0.26817184686660767,
+      "contact_gain_pct": -0.3792161060004261
+    },
+    "window_last30": {
+      "contact": 0.7961869396514176,
+      "free": 0.5864481248484874,
+      "all": 0.6501069784617409,
+      "mask_density": 0.30524224042892456,
+      "contact_gain_pct": 5.413555635683609
+    },
+    "gaussian_smooth": {
+      "contact": 0.7970605311943456,
+      "free": 0.5896477999538692,
+      "all": 0.6526006429236172,
+      "mask_density": 0.30524224042892456,
+      "contact_gain_pct": 5.30977357928807
+    }
+  },
+  "variants_tested": [
+    "gripper_transition",
+    "gt_ee_velocity_drop",
+    "window_last30",
+    "gaussian_smooth"
+  ],
+  "factor": 1.5,
+  "notes": "All variants evaluated with the SAME gripper-transition proxy contact mask for comparability."
+}

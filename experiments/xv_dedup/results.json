@@ -1,0 +1,40 @@
+{
+  "elapsed_sec": 10.691015005111694,
+  "device": "cuda:0",
+  "config": {
+    "hash_dims": [
+      32,
+      64,
+      128
+    ],
+    "n_scenes": 8,
+    "shift_px": 16,
+    "n_patches_per_view": 256,
+    "img_size": 224,
+    "patch_size": 14
+  },
+  "results": {
+    "gate_A_overlap": {
+      "th_0.7": 93.017578125,
+      "th_0.8": 82.51953125,
+      "th_0.85": 70.361328125,
+      "th_0.9": 47.75390625
+    },
+    "gate_A_avg_max_sim": 0.865566611289978,
+    "intra_view_overlap_pct_at_0.85": 98.486328125,
+    "gate_B_lsh_h32_agreement_pct": 10.64453125,
+    "gate_B_lsh_h32_precision_at_high_sim_pct": 9.715475142002106,
+    "gate_B_lsh_h64_agreement_pct": 17.822265625,
+    "gate_B_lsh_h64_precision_at_high_sim_pct": 17.48785525560379,
+    "gate_B_lsh_h128_agreement_pct": 29.58984375,
+    "gate_B_lsh_h128_precision_at_high_sim_pct": 30.464953184127808,
+    "gate_C_prefill_latency_full_ms": 2.078072400763631,
+    "gate_C_prefill_latency_reduced_ms": 1.6372448997572064,
+    "gate_C_latency_reduction_pct": 21.2132888557893
+  },
+  "verdict": "FEASIBILITY: PARTIAL/FAIL \u2014 overlap exists but LSH needs InfoNCE training",
+  "pass_gate_a": true,
+  "pass_gate_b": false,
+  "pass_gate_c": false,
+  "pass_all": false
+}

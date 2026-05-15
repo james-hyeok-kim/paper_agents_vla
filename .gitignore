@@ -1,10 +1,122 @@
+# ===== Python =====
 __pycache__/
-*.pyc
-*.pyo
-.DS_Store
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+dist/
 *.egg-info/
+*.egg
+.eggs/
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ===== Virtual environments =====
 .env
+.venv
+env/
+venv/
+ENV/
+*.envrc
+
+# ===== Jupyter / IPython =====
+.ipynb_checkpoints/
+*.ipynb_checkpoints
+.jupyter/
+profile_default/
+ipython_config.py
+
+# ===== ML / Training artifacts =====
+# (Large weights/checkpoints belong under /data/jameskimh/, not in repo)
+*.pt
+*.pth
+*.safetensors
+*.bin
+*.ckpt
+*.h5
+*.hdf5
+*.tar
+*.onnx
+*.engine
+*.plan
+*.gguf
+checkpoints/
+saved_models/
+pretrained/
+
+# ===== Experiment outputs =====
 *.log
+run.log
 results/
-experiments/*/checkpoints/
+runs/
 wandb/
+mlruns/
+tensorboard/
+tb_logs/
+lightning_logs/
+outputs/
+hydra_outputs/
+.hydra/
+core.*
+
+# Per-experiment large outputs (keep results.json, plots, README.md, scripts)
+experiments/*/checkpoints/
+experiments/*/data/
+experiments/*/videos/
+experiments/*/cache/
+experiments/*/*.tar
+experiments/*/*.tar.gz
+
+# ===== Datasets / Caches =====
+*.parquet
+*.arrow
+data/
+datasets/
+.cache/
+huggingface_cache/
+
+# ===== Editor / IDE =====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.pydevproject
+.settings/
+.cursor/
+
+# ===== OS =====
+.DS_Store
+Thumbs.db
+desktop.ini
+$RECYCLE.BIN/
+
+# ===== Secrets / Local config =====
+.env.local
+.env.*.local
+*.secret
+secrets/
+.credentials
+*.key
+*.pem
+
+# ===== Build / Tools =====
+.mypy_cache/
+.ruff_cache/
+.pytest_cache/
+.tox/
+.coverage
+.coverage.*
+htmlcov/
+.benchmarks/
+
+# ===== Local memory / agent state (keep schemas, ignore runtime caches) =====
+.claude/agent-memory/**/.cache/
+.claude/agent-memory/**/scratch/
+
+# ===== Misc =====
+*.bak
+*.tmp
+*.temp

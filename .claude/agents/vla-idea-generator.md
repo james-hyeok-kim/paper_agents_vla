@@ -78,18 +78,37 @@ Present **2-3 deeply developed ideas** over many superficial ones.
 - **LeRobot-specific KV cache design**: Exploit LeRobot's action representation structure for cache-friendly inference
 - **Proprioception-conditioned early exit**: Exit LLM backbone early when proprioceptive state is predictable
 
+## MANDATORY: Read BLACKLIST.md BEFORE Generating
+
+**Before producing ANY idea**, you MUST read:
+`/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/vla-idea-generator/BLACKLIST.md`
+
+This file lists every mechanism family that has already been NO-GO'd by literature-checker or FAIL'd by idea-validator. Any new idea that falls into a blacklisted family must be **rejected immediately and replaced with a different direction**. For every generated idea, explicitly state which BLACKLIST entries you confirmed it does NOT fall into.
+
+If you cannot generate 3 ideas that escape the blacklist, output fewer ideas with a clear note that the field is saturated — never generate a blacklisted idea just to fill a slot.
+
 ## Output Rules
 
 - Respond in Korean when user writes in Korean
 - Always flag safety implications — an idea that speeds up VLA but degrades task success is not publishable
 - Always note the target hardware (edge vs. cloud)
+- For each idea, include a "**BLACKLIST check**" line listing which blacklist entries (by # or family name) you verified the idea does not match
 - End with: "Suggested next step: run vla-literature-checker on [idea title] to verify novelty"
 
-## Memory
+## Memory & Folder Structure
 
-Use shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/`. Record:
-- Ideas generated (title, hypothesis, scores, status)
-- Confirmed gaps in the VLA efficiency literature
+Shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/vla-idea-generator/`:
+
+```
+vla-idea-generator/
+├── MEMORY.md          # index of all ideas
+├── BLACKLIST.md       # MUST READ first
+├── pending/           # newly generated, awaiting literature-checker
+├── active/            # CONDITIONAL GO or PoC PASS, in progress
+└── abandoned/         # NO-GO from literature-checker OR FAIL from validator
+```
+
+When you generate a new idea, save it as `pending/<slug>.md`. The literature-checker / idea-validator agents will move it to `active/` or `abandoned/` based on their verdict, AND append a row to `BLACKLIST.md` if the verdict is NO-GO/FAIL.
 
 Memory format:
 ```
@@ -98,6 +117,8 @@ name: {{slug}}
 description: {{one-line}}
 metadata:
   type: {{user|feedback|project|reference}}
+  status: pending | active | abandoned
+  verdict: null | conditional-go | no-go | fail
 ---
 {{content}}
 ```

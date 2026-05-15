@@ -1,0 +1,79 @@
+{
+  "elapsed_sec": 120.74885272979736,
+  "results": {
+    "baseline": {
+      "all": 0.6328094312277006,
+      "contact": 0.851986681762241,
+      "free": 0.5370879544164455,
+      "rot_contact": 0.011237273993864774,
+      "rot_free": 0.007420842055104186,
+      "trans_contact": 0.40838822045901685,
+      "trans_free": 0.36952827202075317,
+      "n_contact": 1881.0,
+      "n_free": 4307.0,
+      "mask_density": 0.3037964403629303
+    },
+    "gripper_channel_diff": {
+      "all": 0.6507750056833318,
+      "contact": 0.8210857649107237,
+      "free": 0.5972363626237835,
+      "rot_contact": 0.012113961126856707,
+      "rot_free": 0.007810739797168904,
+      "trans_contact": 0.3763680483843829,
+      "trans_free": 0.40494631936009295,
+      "n_contact": 1480.0,
+      "n_free": 4708.0,
+      "mask_density": 0.25289472937583923,
+      "contact_gain_pct": 3.6269248701871892,
+      "free_gain_pct": -11.198986630167532,
+      "overall_gain_pct": -2.839018126006204
+    },
+    "ee_velocity_drop": {
+      "all": 0.6528194645719522,
+      "contact": 0.8977275925007667,
+      "free": 0.5642861176376427,
+      "rot_contact": 0.00962904054837044,
+      "rot_free": 0.00861860038948269,
+      "trans_contact": 0.25570882157588687,
+      "trans_free": 0.44919737636452856,
+      "n_contact": 1643.0,
+      "n_free": 4545.0,
+      "mask_density": 0.26602205634117126,
+      "contact_gain_pct": -5.368735417778557,
+      "free_gain_pct": -5.064005438503718,
+      "overall_gain_pct": -3.162094677607838
+    },
+    "union": {
+      "all": 0.6538401550066109,
+      "contact": 0.7975009375097987,
+      "free": 0.5648464126382252,
+      "rot_contact": 0.010771651332470048,
+      "rot_free": 0.0076630697555175094,
+      "trans_contact": 0.31599776030694776,
+      "trans_free": 0.4490043585352235,
+      "n_contact": 2367.0,
+      "n_free": 3821.0,
+      "mask_density": 0.39414238929748535,
+      "contact_gain_pct": 6.395140372352366,
+      "free_gain_pct": -5.168326340876457,
+      "overall_gain_pct": -3.323389750704089
+    },
+    "intersection": {
+      "all": 0.6455346941562645,
+      "contact": 1.0937288261595226,
+      "free": 0.5831571538248188,
+      "rot_contact": 0.010980894596922018,
+      "rot_free": 0.008479236239712789,
+      "trans_contact": 0.3191286249766274,
+      "trans_free": 0.40382454040650945,
+      "n_contact": 756.0,
+      "n_free": 5432.0,
+      "mask_density": 0.12477446347475052,
+      "contact_gain_pct": -28.373934660253664,
+      "free_gain_pct": -8.577589392863631,
+      "overall_gain_pct": -2.0109154985057485
+    }
+  },
+  "best_detector": "intersection",
+  "verdict": "\ud83d\udfe1 Intersection beats individuals \u2014 overlap is the signal"
+}

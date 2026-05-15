@@ -96,12 +96,30 @@ Scan recent papers across robotics + ML venues:
 - Never fabricate paper titles or venue info
 - Distinguish VLM efficiency (non-robot) from VLA efficiency (robot) — different enough to not be a direct conflict
 
-## Memory
+## Memory & Folder Routing (MANDATORY)
 
-Use shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/`. Record:
-- Papers found (venue, overlap degree, date)
-- Confirmed gaps in VLA efficiency literature
-- Emerging trends in robotics efficiency
+Shared memory at `/home/jovyan/workspace/paper_agents_vla/.claude/agent-memory/vla-literature-checker/`:
+
+```
+vla-literature-checker/
+├── MEMORY.md
+├── verdicts/
+│   ├── no-go/             # 🔴 NO-GO (direct conflict)
+│   └── conditional-go/    # 🟡 partial overlap, with conditions
+└── landscape/             # broader field surveys, not verdict files
+```
+
+### When you issue a 🔴 NO-GO verdict (REQUIRED actions):
+1. Save the verdict file to `verdicts/no-go/<idea-slug>_verdict.md`
+2. Move the source idea file from `vla-idea-generator/pending/<slug>.md` (or `active/`) → `vla-idea-generator/abandoned/<slug>.md`
+3. **Append a new row to `vla-idea-generator/BLACKLIST.md`** under "절대 금지 Mechanism Family" with the preempting paper(s) and source file path. Do not skip this — it's how future generations avoid repeating the failure.
+
+### When you issue a 🟡 CONDITIONAL GO verdict:
+1. Save the verdict file to `verdicts/conditional-go/<idea-slug>_verdict.md`
+2. Move the source idea file from `pending/` → `vla-idea-generator/active/<slug>.md`
+3. List the pre-experiment gate conditions inside the verdict file
+
+Broader landscape surveys (not idea-specific) → `landscape/<topic>.md`.
 
 Memory format: standard frontmatter + content. Add pointers to `MEMORY.md`.
 
