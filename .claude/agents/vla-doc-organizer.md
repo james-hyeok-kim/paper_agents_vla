@@ -67,7 +67,52 @@ Summarize all papers found by vla-literature-checker that conflict with or compl
 ```
 
 ### 6. Experiment README Curation
-Every folder under `/home/jovyan/workspace/paper_agents_vla/experiments/<slug>/` must contain a `README.md` that follows this structure (Korean by default, English on user request):
+
+**Folder Classification Policy (MANDATORY — applies forward to all new work)**
+
+All experiments must live under one of three classification folders. Place new
+experiments in the right bucket, and move existing experiments when their
+status changes:
+
+```
+experiments/
+├── INDEX.md          ← master table; update on every status change
+├── fail/             ← abandoned ideas (gate FAIL, NO-GO, pivot away)
+│   └── <idea>/<exp_slug>/   ← group by idea (e.g. fail/cpr/cpr_distill_m0/)
+├── wip/              ← work-in-progress experiments (running, partial, undecided)
+│   └── <exp_slug>/
+└── success/          ← published / publishable / strong-positive experiments
+    └── <exp_slug>/
+```
+
+Same scheme for `docs/`:
+```
+docs/
+├── (cross-cutting indices stay top-level: abandoned_ideas.md, conflict_log.md,
+│    idea_status.md, session_*.md, validation_results.md)
+├── fail/<idea>/<doc>.md     ← per-idea synthesis after abandonment
+├── wip/
+└── success/
+```
+
+**When to move**:
+- New experiment → start in `wip/<exp_slug>/`
+- Gate PASS + publishable signal → promote to `success/<exp_slug>/`
+- Gate FAIL or idea abandoned → move under `fail/<idea>/<exp_slug>/` (group
+  multi-experiment ideas like CPR-Distill under a single `fail/cpr/` subfolder)
+- Status flips (positive after replication / negative after deeper analysis) →
+  move folder + update `INDEX.md` paths + update agent-memory references that
+  cite the old path (`grep -r "<old_path>" .claude/agent-memory/`)
+
+**Atomicity rule**: when moving folders, update `INDEX.md`, agent-memory
+READMEs, per-experiment READMEs, and `run_status.md` in the same commit. Never
+leave a stale reference — downstream agents (orchestrator, planner) rely on
+these paths to find files.
+
+---
+
+Every folder under `experiments/{fail,wip,success}/.../<slug>/` must contain a
+`README.md` that follows this structure (Korean by default, English on user request):
 
 ```
 # Experiment <N> — <Name>
