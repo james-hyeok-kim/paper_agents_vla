@@ -1,0 +1,274 @@
+{
+  "elapsed_sec": 14263.230929613113,
+  "version": "v5 seed=44 episodes=10 (rollout-only on v4 ckpts)",
+  "seed": 44,
+  "episodes_per_task": 10,
+  "config": {
+    "suite": "libero_spatial",
+    "episodes_per_task": 10,
+    "max_steps": 200,
+    "n_tasks": 10
+  },
+  "sr_results": {
+    "baseline_factor1.0": {
+      "per_task": [
+        {
+          "task_id": 0,
+          "task_desc": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 4,
+          "success_rate": 0.4,
+          "avg_steps": 173.4
+        },
+        {
+          "task_id": 1,
+          "task_desc": "pick up the black bowl next to the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 2,
+          "task_desc": "pick up the black bowl from table center and place it on the plate",
+          "n_episodes": 10,
+          "successes": 4,
+          "success_rate": 0.4,
+          "avg_steps": 168.5
+        },
+        {
+          "task_id": 3,
+          "task_desc": "pick up the black bowl on the cookie box and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 4,
+          "task_desc": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 5,
+          "task_desc": "pick up the black bowl on the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 6,
+          "task_desc": "pick up the black bowl next to the cookie box and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 7,
+          "task_desc": "pick up the black bowl on the stove and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 8,
+          "task_desc": "pick up the black bowl next to the plate and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 9,
+          "task_desc": "pick up the black bowl on the wooden cabinet and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        }
+      ],
+      "overall_sr": 0.08,
+      "total_steps": 19419
+    },
+    "channel_diff_1.5": {
+      "per_task": [
+        {
+          "task_id": 0,
+          "task_desc": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 4,
+          "success_rate": 0.4,
+          "avg_steps": 165.9
+        },
+        {
+          "task_id": 1,
+          "task_desc": "pick up the black bowl next to the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 2,
+          "task_desc": "pick up the black bowl from table center and place it on the plate",
+          "n_episodes": 10,
+          "successes": 2,
+          "success_rate": 0.2,
+          "avg_steps": 181.3
+        },
+        {
+          "task_id": 3,
+          "task_desc": "pick up the black bowl on the cookie box and place it on the plate",
+          "n_episodes": 10,
+          "successes": 2,
+          "success_rate": 0.2,
+          "avg_steps": 186.5
+        },
+        {
+          "task_id": 4,
+          "task_desc": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 5,
+          "task_desc": "pick up the black bowl on the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 3,
+          "success_rate": 0.3,
+          "avg_steps": 182.6
+        },
+        {
+          "task_id": 6,
+          "task_desc": "pick up the black bowl next to the cookie box and place it on the plate",
+          "n_episodes": 10,
+          "successes": 1,
+          "success_rate": 0.1,
+          "avg_steps": 192.2
+        },
+        {
+          "task_id": 7,
+          "task_desc": "pick up the black bowl on the stove and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 8,
+          "task_desc": "pick up the black bowl next to the plate and place it on the plate",
+          "n_episodes": 10,
+          "successes": 2,
+          "success_rate": 0.2,
+          "avg_steps": 185.7
+        },
+        {
+          "task_id": 9,
+          "task_desc": "pick up the black bowl on the wooden cabinet and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        }
+      ],
+      "overall_sr": 0.14,
+      "total_steps": 18942
+    },
+    "sham_3.0": {
+      "per_task": [
+        {
+          "task_id": 0,
+          "task_desc": "pick up the black bowl between the plate and the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 1,
+          "success_rate": 0.1,
+          "avg_steps": 190.4
+        },
+        {
+          "task_id": 1,
+          "task_desc": "pick up the black bowl next to the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 2,
+          "task_desc": "pick up the black bowl from table center and place it on the plate",
+          "n_episodes": 10,
+          "successes": 3,
+          "success_rate": 0.3,
+          "avg_steps": 181.0
+        },
+        {
+          "task_id": 3,
+          "task_desc": "pick up the black bowl on the cookie box and place it on the plate",
+          "n_episodes": 10,
+          "successes": 3,
+          "success_rate": 0.3,
+          "avg_steps": 190.9
+        },
+        {
+          "task_id": 4,
+          "task_desc": "pick up the black bowl in the top drawer of the wooden cabinet and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 5,
+          "task_desc": "pick up the black bowl on the ramekin and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 6,
+          "task_desc": "pick up the black bowl next to the cookie box and place it on the plate",
+          "n_episodes": 10,
+          "successes": 1,
+          "success_rate": 0.1,
+          "avg_steps": 197.5
+        },
+        {
+          "task_id": 7,
+          "task_desc": "pick up the black bowl on the stove and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 8,
+          "task_desc": "pick up the black bowl next to the plate and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        },
+        {
+          "task_id": 9,
+          "task_desc": "pick up the black bowl on the wooden cabinet and place it on the plate",
+          "n_episodes": 10,
+          "successes": 0,
+          "success_rate": 0.0,
+          "avg_steps": 200.0
+        }
+      ],
+      "overall_sr": 0.07999999999999999,
+      "total_steps": 19598
+    }
+  },
+  "delta_sr_cpr_vs_baseline_pp": 6.000000000000001,
+  "delta_sr_cpr_vs_sham_pp": 6.000000000000003
+}

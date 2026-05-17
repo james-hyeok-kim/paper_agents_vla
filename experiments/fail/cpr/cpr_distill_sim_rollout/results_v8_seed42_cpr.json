@@ -1,0 +1,120 @@
+{
+  "elapsed_sec": 4109.191763877869,
+  "version": "v8 (libero_goal) seed=42 condition=cpr chunk=16 ep=30",
+  "seed": 42,
+  "condition": "cpr",
+  "chunk": 16,
+  "episodes_per_task": 30,
+  "val_stats": {
+    "arm": 0.12039253457557936,
+    "grip_acc": 0.9642309374082099
+  },
+  "sr": {
+    "per_task": [
+      {
+        "task_id": 0,
+        "task_desc": "open the middle drawer of the cabinet",
+        "n_episodes": 30,
+        "successes": 1,
+        "success_rate": 0.03333333333333333,
+        "avg_steps": 584.1
+      },
+      {
+        "task_id": 1,
+        "task_desc": "put the bowl on the stove",
+        "n_episodes": 30,
+        "successes": 9,
+        "success_rate": 0.3,
+        "avg_steps": 461.03333333333336
+      },
+      {
+        "task_id": 2,
+        "task_desc": "put the wine bottle on top of the cabinet",
+        "n_episodes": 30,
+        "successes": 0,
+        "success_rate": 0.0,
+        "avg_steps": 600.0
+      },
+      {
+        "task_id": 3,
+        "task_desc": "open the top drawer and put the bowl inside",
+        "n_episodes": 30,
+        "successes": 0,
+        "success_rate": 0.0,
+        "avg_steps": 600.0
+      },
+      {
+        "task_id": 4,
+        "task_desc": "put the bowl on top of the cabinet",
+        "n_episodes": 30,
+        "successes": 6,
+        "success_rate": 0.2,
+        "avg_steps": 517.7666666666667
+      },
+      {
+        "task_id": 5,
+        "task_desc": "push the plate to the front of the stove",
+        "n_episodes": 30,
+        "successes": 0,
+        "success_rate": 0.0,
+        "avg_steps": 600.0
+      },
+      {
+        "task_id": 6,
+        "task_desc": "put the cream cheese in the bowl",
+        "n_episodes": 30,
+        "successes": 1,
+        "success_rate": 0.03333333333333333,
+        "avg_steps": 583.3
+      },
+      {
+        "task_id": 7,
+        "task_desc": "turn on the stove",
+        "n_episodes": 30,
+        "successes": 9,
+        "success_rate": 0.3,
+        "avg_steps": 509.23333333333335
+      },
+      {
+        "task_id": 8,
+        "task_desc": "put the bowl on the plate",
+        "n_episodes": 30,
+        "successes": 4,
+        "success_rate": 0.13333333333333333,
+        "avg_steps": 535.8666666666667
+      },
+      {
+        "task_id": 9,
+        "task_desc": "put the wine bottle on the rack",
+        "n_episodes": 30,
+        "successes": 0,
+        "success_rate": 0.0,
+        "avg_steps": 600.0
+      }
+    ],
+    "overall_sr": 0.1,
+    "total_steps": 167739
+  },
+  "state_stats": {
+    "mean": [
+      -0.09201885014772415,
+      0.01233089528977871,
+      1.0688141584396362,
+      2.8057377338409424,
+      0.32544252276420593,
+      -0.2824784517288208,
+      0.028401993215084076,
+      -0.02724582515656948
+    ],
+    "std": [
+      0.11442755162715912,
+      0.11586549878120422,
+      0.10469517111778259,
+      0.5740944743156433,
+      0.7485980987548828,
+      0.3737099766731262,
+      0.014837565831840038,
+      0.014937768690288067
+    ]
+  }
+}

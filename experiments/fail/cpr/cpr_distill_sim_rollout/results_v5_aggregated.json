@@ -1,0 +1,68 @@
+{
+  "seeds": [
+    42,
+    43,
+    44
+  ],
+  "episodes_per_task": 10,
+  "per_seed_total": 100,
+  "per_seed_sr": {
+    "baseline_factor1.0": [
+      0.09,
+      0.05,
+      0.08
+    ],
+    "channel_diff_1.5": [
+      0.030000000000000006,
+      0.06999999999999999,
+      0.14
+    ],
+    "sham_3.0": [
+      0.15,
+      0.14,
+      0.07999999999999999
+    ]
+  },
+  "per_seed_deltas": {
+    "cpr_vs_baseline": [
+      -6.0,
+      1.9999999999999991,
+      6.000000000000002
+    ],
+    "cpr_vs_sham": [
+      -12.0,
+      -7.000000000000003,
+      6.000000000000003
+    ],
+    "sham_vs_baseline": [
+      6.0,
+      9.000000000000002,
+      -8.881784197001252e-16
+    ]
+  },
+  "paired_tests": {
+    "cpr_vs_baseline": {
+      "paired_t_p": 0.8675467642934955,
+      "wilcoxon_p": 0.75
+    },
+    "cpr_vs_sham": {
+      "paired_t_p": 0.504019064084265,
+      "wilcoxon_p": 0.5
+    }
+  },
+  "pooled": {
+    "baseline_factor1.0": [
+      22,
+      300
+    ],
+    "channel_diff_1.5": [
+      24,
+      300
+    ],
+    "sham_3.0": [
+      37,
+      300
+    ]
+  },
+  "verdict": "Inconclusive at n=3 seeds \u00d7 10 ep/task \u2014 paired tests cannot reject H0; median \u0394(CPR-sham) = -7.0pp, bootstrap CI is the main uncertainty story"
+}

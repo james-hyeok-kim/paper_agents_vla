@@ -2,7 +2,20 @@
 
 VLA inference efficiency 연구 실험 모음. 4× NVIDIA B200 GPU 환경.
 
-**Last updated**: 2026-05-15
+**Last updated**: 2026-05-17
+
+## Folder Structure
+
+```
+experiments/
+├── INDEX.md          ← this file
+├── fail/             ← polished off / abandoned ideas
+│   ├── cpr/          ← 14 CPR-Distill folders (Exp 1, 4-21)
+│   ├── cp_sparse/    ← Exp 3 FAIL
+│   └── xv_dedup/     ← Exp 2 PARTIAL → abandoned
+├── wip/              ← work-in-progress experiments
+└── success/          ← published / publishable experiments
+```
 
 ---
 
@@ -12,21 +25,27 @@ VLA inference efficiency 연구 실험 모음. 4× NVIDIA B200 GPU 환경.
 
 | # | Idea | 실험 | Verdict | Output |
 |---|---|---|---|---|
-| 1 | **CPR-Distill** (구 AMP-Distill) | SE(3) loss × contact-phase reweight 합성 SE(3) trajectory | ✅ **PASS** (67x specificity) | `amp_distill/results.json` |
-| 2 | **XV-Dedup** | DINOv2 cross-view token overlap + LSH bucketing | 🟡 **PARTIAL** (1/3 gates, core hypothesis confirmed) | `xv_dedup/results.json` |
-| 3 | **CP-Sparse** | Tiny ACT chunk-position attention entropy | ❌ **FAIL** (원안 가설 미입증) | `cp_sparse/results.json` |
-| 4 | **CPR-Distill M0** (real LIBERO) | TinyBC + LIBERO-spatial + 4-condition ablation (sham control 포함) | ✅ **PASS** (CPR vs sham Δ +17.07pp) | `cpr_distill_m0/results.json` |
-| 5 | **CPR-Distill Sweep** (reweight factor + adaptive) | Reweight factor sweep {1, 1.5, 2, 2.5, 3, 4, 5} + adaptive learnable boost | ✅ **PASS** (Sweet spot 1.5x: overall +1.55% — **multi-seed에서 null로 정정**) | `cpr_distill_sweep/results.json` |
-| 6 | **CPR-Distill Adaptive v2** | Adaptive collapse fix (reg=0 + bias init) | ❌ **FAIL** — 구조적 문제, bilevel 필요 | `cpr_distill_adaptive_v2/results.json` |
-| 7 | **CPR-Distill Mask Quality** | 4 contact mask variant 비교 | ✅ gripper_transition가 최선 | `cpr_distill_mask_quality/results.json` |
-| 8 | **CPR-Distill Multi-Seed** | 4 conditions × 5 seeds significance | ✅ **5.97σ contact gain** / ⚠️ overall null | `cpr_distill_multiseed/results.json` |
-| 9 | **CPR-Distill Window Sweep** | window ±{1,3,5,7} sensitivity | ✅ robust (5.9-7.9%) | `cpr_distill_window_sweep/results.json` |
-| 10 | **CPR-Distill Multi-Suite** | 4 LIBERO suite × 3 factor generalization | ❌ **factor=1.0이 모든 suite에서 overall best** | `cpr_distill_multisuite/results.json` |
-| 11 | **CPR-Distill Per-Suite Deep Dive** | Suite statistics + libero_10/object fine sweep | ⚠️ **gripper-transition 0회 검출** 발견 — 진짜 "contact"가 아니었음 | `cpr_distill_per_suite_analysis/results.json` |
-| 12 | **CPR-Distill Contact Diagnostic** | LIBERO gripper 데이터 분석 + 6 detector 비교 | ✅ **BREAKTHROUGH**: gripper_channel_diff로 contact gain +10.26%, overall +1.48% | `cpr_distill_contact_diagnostic/results.json` |
-| 13 | **CPR-Distill Multi-seed × channel_diff** | 3 conditions × 5 seeds (significance check) | ✅ **Contact 8σ** ⭐ / ⚠️ Overall null (-0.01σ) | `cpr_distill_channeldiff_multiseed/results.json` |
-| 14 | **CPR-Distill Multi-suite × channel_diff** | 4 suites × 3 factors with channel_diff | ⚠️ Suite-dependent (libero_10 prefers factor=3.0) | `cpr_distill_channeldiff_multisuite/results.json` |
-| 15 | **CPR-Distill Combined Detector** | Union/intersection of channel_diff + velocity_drop | 🟡 Union slightly best (single-seed) | `cpr_distill_combined_detector/results.json` |
+| 1 | **CPR-Distill** (구 AMP-Distill) | SE(3) loss × contact-phase reweight 합성 SE(3) trajectory | ✅ **PASS** (67x specificity) | `fail/cpr/amp_distill/results.json` |
+| 2 | **XV-Dedup** | DINOv2 cross-view token overlap + LSH bucketing | 🟡 **PARTIAL** (1/3 gates, core hypothesis confirmed) | `fail/xv_dedup/results.json` |
+| 3 | **CP-Sparse** | Tiny ACT chunk-position attention entropy | ❌ **FAIL** (원안 가설 미입증) | `fail/cp_sparse/results.json` |
+| 4 | **CPR-Distill M0** (real LIBERO) | TinyBC + LIBERO-spatial + 4-condition ablation (sham control 포함) | ✅ **PASS** (CPR vs sham Δ +17.07pp) | `fail/cpr/cpr_distill_m0/results.json` |
+| 5 | **CPR-Distill Sweep** (reweight factor + adaptive) | Reweight factor sweep {1, 1.5, 2, 2.5, 3, 4, 5} + adaptive learnable boost | ✅ **PASS** (Sweet spot 1.5x: overall +1.55% — **multi-seed에서 null로 정정**) | `fail/cpr/cpr_distill_sweep/results.json` |
+| 6 | **CPR-Distill Adaptive v2** | Adaptive collapse fix (reg=0 + bias init) | ❌ **FAIL** — 구조적 문제, bilevel 필요 | `fail/cpr/cpr_distill_adaptive_v2/results.json` |
+| 7 | **CPR-Distill Mask Quality** | 4 contact mask variant 비교 | ✅ gripper_transition가 최선 | `fail/cpr/cpr_distill_mask_quality/results.json` |
+| 8 | **CPR-Distill Multi-Seed** | 4 conditions × 5 seeds significance | ✅ **5.97σ contact gain** / ⚠️ overall null | `fail/cpr/cpr_distill_multiseed/results.json` |
+| 9 | **CPR-Distill Window Sweep** | window ±{1,3,5,7} sensitivity | ✅ robust (5.9-7.9%) | `fail/cpr/cpr_distill_window_sweep/results.json` |
+| 10 | **CPR-Distill Multi-Suite** | 4 LIBERO suite × 3 factor generalization | ❌ **factor=1.0이 모든 suite에서 overall best** | `fail/cpr/cpr_distill_multisuite/results.json` |
+| 11 | **CPR-Distill Per-Suite Deep Dive** | Suite statistics + libero_10/object fine sweep | ⚠️ **gripper-transition 0회 검출** 발견 — 진짜 "contact"가 아니었음 | `fail/cpr/cpr_distill_per_suite_analysis/results.json` |
+| 12 | **CPR-Distill Contact Diagnostic** | LIBERO gripper 데이터 분석 + 6 detector 비교 | ✅ **BREAKTHROUGH**: gripper_channel_diff로 contact gain +10.26%, overall +1.48% | `fail/cpr/cpr_distill_contact_diagnostic/results.json` |
+| 13 | **CPR-Distill Multi-seed × channel_diff** | 3 conditions × 5 seeds (significance check) | ✅ **Contact 8σ** ⭐ / ⚠️ Overall null (-0.01σ) | `fail/cpr/cpr_distill_channeldiff_multiseed/results.json` |
+| 14 | **CPR-Distill Multi-suite × channel_diff** | 4 suites × 3 factors with channel_diff | ⚠️ Suite-dependent (libero_10 prefers factor=3.0) | `fail/cpr/cpr_distill_channeldiff_multisuite/results.json` |
+| 15 | **CPR-Distill Combined Detector** | Union/intersection of channel_diff + velocity_drop | 🟡 Union slightly best (single-seed) | `fail/cpr/cpr_distill_combined_detector/results.json` |
+| 16 | **CPR-Distill Sim Rollout v2/v3** | MediumBC ResNet18 dual-view + state-repr fix → MSE→SR translation check | ⚠️ **Inconclusive at n=30 single-seed**: CPR 10.0%, sham 10.0%, baseline 6.7% (CPR=sham within noise; same seed=42 makes per-task identity partially expected) — multi-seed needed to discriminate | `fail/cpr/cpr_distill_sim_rollout/results_v3.json`, `README.md` |
+| 17 | **CPR-Distill Sim Rollout v4 multi-seed** | 3 seeds × 3 conditions × 30 ep/cond on libero_spatial | ⚠️ **Inconclusive at n=3 seeds**: per-seed Δ(CPR-sham) `{-6.7, 0, +16.7}` pp (bimodal); paired test underpowered (~50 obs needed for d=0.4). Pooled Fisher (p=0.31) is wrong test. CPR std > baseline std (variance concern). | `fail/cpr/cpr_distill_sim_rollout/results_v4_aggregated.json` |
+| 18 | **CPR-Distill Sim Rollout v5 (3 seeds × 100 ep)** | Reuse v4 ckpts; 3 seeds × 3 conditions × 100 ep/cond = pooled 300/cond | ⚠️ **Still inconclusive (n=3 paired)**: per-seed SR 안정 (CI 좁아짐); means baseline 7.3%, CPR 8.0%, sham 12.3%. Δ(CPR-sham) {-12, -7, +6} pp (Wilcoxon p=0.500). Δ(Sham-base) {+6, +9, 0} pp (paired-t p=0.199, 가장 가까움). v4→v5는 reversal 아닌 CI 좁힘. **Regime mismatch (SR 7%는 reach failure 지배, CPR이 작용할 contact 단계 미도달)** → 더 많은 episode/seed로는 답 못 함. Option C (action chunking) 필요. seed44는 clean CPR win (14% vs 8%/8%) — bimodal seed pattern 그 자체가 finding | `fail/cpr/cpr_distill_sim_rollout/results_v5_aggregated.json` |
+| 19 | **CPR-Distill Sim Rollout v6 (chunked BC + BCE gripper + state norm)** | Action chunk=16, BCE gripper head, tanh arm, state z-score. 3 seeds × 3 conditions × 30 ep/task = 300 ep/cond. + per-task contact_fraction correlation analysis (advisor 권고) | ⚠️ **Regime fix 성공 but mechanism null**: baseline SR 67.4% (v5의 9.5x), CPR 67.2%, sham 68.7% — paired-t p≥0.34 모두 null. Per-task contact_frac 0.21-0.28 narrow range → contact-selectivity 깨끗하게 테스트 불가. r(contact_frac, CPR-base)=-0.47 (narrow range, p=0.17), r(contact_frac, Sham-base)=-0.68 (**p=0.03**) → sham의 음의 상관은 mechanism이 아닌 **effective-LR scaling** 시사 (validator의 원래 우려 empirically supported). **MSE 5-8σ specificity는 진짜지만 SR로 translate 안 됨 (in BC-with-chunking regime, demo target)**. Teacher-VLA distillation regime은 미테스트 — prior는 낮아지지만 refute 아님 | `fail/cpr/cpr_distill_sim_rollout/results_v6_aggregated.json`, `results_v6_contact_correlation.json`, `v6_contact_correlation.png` |
+| 20 | **CPR-Distill Sim Rollout v7 (libero_10 generalization)** | v6 code on libero_10 (long-horizon, multi-stage, wider contact_frac range 0.11-0.29). 3 seeds × 3 conditions × 30 ep/task = 300 ep/cond | ⚠️ **Regime fix holds + first interpretable mechanism signal (one suite)**: baseline 76.4%, CPR 77.4%, sham 78.8% — paired-t p≥0.43 모두 null overall. **Per-task Spearman ρ(contact_density, CPR-sham) = +0.69, raw p=0.028 (n=10)** — survives baseline-SR confound (partial r=+0.50) but **not** Bonferroni-adjusted (adj p≈0.08). **Interpretation correction**: "CPR is less *harmful* than sham on contact-rich tasks" (Δ(CPR-base) 상관 = -0.03), NOT "CPR helps." Suggestive enough to require libero_goal replication before workshop write-up | `fail/cpr/cpr_distill_sim_rollout/results_v7_aggregated.json`, `results_v7_contact_correlation.json`, `v7_contact_correlation.png` |
+| 21 | **CPR-Distill Sim Rollout v8 (libero_goal replication of v7)** | Same v6/v7 chunked BC setup on libero_goal (third suite; episodes 128-299, low-SR regime). 3 seeds × 3 conditions × 30 ep/task | ❌ **v7's signal does NOT replicate**: baseline mean 10.0%, CPR 8.4%, sham 8.6% — paired tests p≥0.18 all null. **Spearman ρ(contact, CPR-sham) = -0.02 (p=0.96)** vs v7's +0.69 → v7 was **one-suite fluke / outlier-driven**. Pearson +0.31 (vs v7 +0.59) is consistent in direction but not significant. **4-suite picture**: across low-SR (v5 7%, v8 10%) AND high-SR (v6 67%, v7 76%) regimes, CPR does not consistently outperform baseline or sham at task SR. **MSE-level 5-8σ specificity does NOT translate to SR in BC-with-chunking regime across any suite tested**. Negative result for CPR-Distill's main task-SR thesis is now comprehensive | `fail/cpr/cpr_distill_sim_rollout/results_v8_aggregated.json`, `results_v8_contact_correlation.json`, `v8_contact_correlation.png` |
 
 ---
 
@@ -57,9 +76,9 @@ L2-fixed + reweight ≈ SO(3) + reweight (3.40 vs 3.52) — 즉 **contact-phase 
 Headline 재정의: "Contact-Phase Reweighted Distillation for VLA" (구 "SE(3) Manifold-Preserving Distillation"에서 축소).
 
 ### Files
-- `amp_distill/poc.py` — PoC 스크립트
-- `amp_distill/results.json` — 측정 데이터
-- `amp_distill/run.log` — 실행 로그
+- `fail/cpr/amp_distill/poc.py` — PoC 스크립트
+- `fail/cpr/amp_distill/results.json` — 측정 데이터
+- `fail/cpr/amp_distill/run.log` — 실행 로그
 
 ---
 
@@ -84,7 +103,7 @@ Headline 재정의: "Contact-Phase Reweighted Distillation for VLA" (구 "SE(3) 
 Core hypothesis 강력하게 검증됨 (70.4% overlap, 예상의 2.3x). LSH는 random projection이 부족 → InfoNCE 학습이 필수 다음 단계.
 
 ### Files
-- `xv_dedup/poc.py`, `xv_dedup/results.json`, `xv_dedup/run.log`
+- `fail/xv_dedup/poc.py`, `fail/xv_dedup/results.json`, `fail/xv_dedup/run.log`
 
 ---
 
@@ -113,7 +132,7 @@ Core hypothesis 강력하게 검증됨 (70.4% overlap, 예상의 2.3x). LSH는 r
 합성 데이터의 position-conditional dependency 구조가 모델이 position-specific attention을 학습하도록 강제. Real SmolVLA on LeRobot data에서 재측정 없이는 결정 불가.
 
 ### Files
-- `cp_sparse/poc.py`, `cp_sparse/results.json`, `cp_sparse/run.log`
+- `fail/cp_sparse/poc.py`, `fail/cp_sparse/results.json`, `fail/cp_sparse/run.log`
 
 ---
 
@@ -159,10 +178,10 @@ Core hypothesis 강력하게 검증됨 (70.4% overlap, 예상의 2.3x). LSH는 r
 4. **M3.5**: GT contact (real F/T) vs predicted vs gripper-only 비교 (proxy quality)
 
 ### Files
-- `cpr_distill_m0/m0_smoke.py` — 스크립트
-- `cpr_distill_m0/results.json` — 측정값
-- `cpr_distill_m0/run.log` — 실행 로그
-- `cpr_distill_m0/m0_results.png` — 시각화 (epoch curve + bar chart)
+- `fail/cpr/cpr_distill_m0/m0_smoke.py` — 스크립트
+- `fail/cpr/cpr_distill_m0/results.json` — 측정값
+- `fail/cpr/cpr_distill_m0/run.log` — 실행 로그
+- `fail/cpr/cpr_distill_m0/m0_results.png` — 시각화 (epoch curve + bar chart)
 - `/data/jameskimh/cpr_distill_m0/{A,B,C,D}_*.pt` — 4 모델 checkpoint (10MB total)
 
 ---
@@ -202,10 +221,10 @@ Contact gain과 free loss는 거의 1:1 trade. No free lunch.
 **"CPR-Distill at factor=1.5x improves overall action MSE by 1.55% via contact-specific reweighting, with sham-control beating margin of 8pp."**
 
 ### Files
-- `cpr_distill_sweep/sweep.py` — 스크립트
-- `cpr_distill_sweep/results.json` — 측정값
-- `cpr_distill_sweep/run.log` — 실행 로그
-- `cpr_distill_sweep/sweep_results.png` — Pareto curve + MSE vs factor
+- `fail/cpr/cpr_distill_sweep/sweep.py` — 스크립트
+- `fail/cpr/cpr_distill_sweep/results.json` — 측정값
+- `fail/cpr/cpr_distill_sweep/run.log` — 실행 로그
+- `fail/cpr/cpr_distill_sweep/sweep_results.png` — Pareto curve + MSE vs factor
 - `/data/jameskimh/cpr_distill_sweep/{factor_*.pt, adaptive.pt}` — 8 checkpoint
 
 ---

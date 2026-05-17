@@ -1,0 +1,120 @@
+{
+  "elapsed_sec": 2968.7013533115387,
+  "version": "v7 (libero_10) seed=44 condition=baseline chunk=16 ep=30",
+  "seed": 44,
+  "condition": "baseline",
+  "chunk": 16,
+  "episodes_per_task": 30,
+  "val_stats": {
+    "arm": 0.07716101676767533,
+    "grip_acc": 0.9411540747344179
+  },
+  "sr": {
+    "per_task": [
+      {
+        "task_id": 0,
+        "task_desc": "put both the alphabet soup and the tomato sauce in the basket",
+        "n_episodes": 30,
+        "successes": 4,
+        "success_rate": 0.13333333333333333,
+        "avg_steps": 559.7
+      },
+      {
+        "task_id": 1,
+        "task_desc": "put both the cream cheese box and the butter in the basket",
+        "n_episodes": 30,
+        "successes": 12,
+        "success_rate": 0.4,
+        "avg_steps": 469.8333333333333
+      },
+      {
+        "task_id": 2,
+        "task_desc": "turn on the stove and put the moka pot on it",
+        "n_episodes": 30,
+        "successes": 30,
+        "success_rate": 1.0,
+        "avg_steps": 256.8333333333333
+      },
+      {
+        "task_id": 3,
+        "task_desc": "put the black bowl in the bottom drawer of the cabinet and close it",
+        "n_episodes": 30,
+        "successes": 30,
+        "success_rate": 1.0,
+        "avg_steps": 234.46666666666667
+      },
+      {
+        "task_id": 4,
+        "task_desc": "put the white mug on the left plate and put the yellow and white mug on the right plate",
+        "n_episodes": 30,
+        "successes": 28,
+        "success_rate": 0.9333333333333333,
+        "avg_steps": 254.26666666666668
+      },
+      {
+        "task_id": 5,
+        "task_desc": "pick up the book and place it in the back compartment of the caddy",
+        "n_episodes": 30,
+        "successes": 30,
+        "success_rate": 1.0,
+        "avg_steps": 188.5
+      },
+      {
+        "task_id": 6,
+        "task_desc": "put the white mug on the plate and put the chocolate pudding to the right of the plate",
+        "n_episodes": 30,
+        "successes": 16,
+        "success_rate": 0.5333333333333333,
+        "avg_steps": 420.8666666666667
+      },
+      {
+        "task_id": 7,
+        "task_desc": "put both the alphabet soup and the cream cheese box in the basket",
+        "n_episodes": 30,
+        "successes": 29,
+        "success_rate": 0.9666666666666667,
+        "avg_steps": 265.8666666666667
+      },
+      {
+        "task_id": 8,
+        "task_desc": "put both moka pots on the stove",
+        "n_episodes": 30,
+        "successes": 18,
+        "success_rate": 0.6,
+        "avg_steps": 498.1
+      },
+      {
+        "task_id": 9,
+        "task_desc": "put the yellow and white mug in the microwave and close it",
+        "n_episodes": 30,
+        "successes": 24,
+        "success_rate": 0.8,
+        "avg_steps": 347.3
+      }
+    ],
+    "overall_sr": 0.7366666666666666,
+    "total_steps": 104872
+  },
+  "state_stats": {
+    "mean": [
+      -0.04172811657190323,
+      0.032810699194669724,
+      0.840796172618866,
+      2.8830201625823975,
+      -0.6700392365455627,
+      -0.1962851583957672,
+      0.028358757495880127,
+      -0.028695106506347656
+    ],
+    "std": [
+      0.1039622575044632,
+      0.14449210464954376,
+      0.25707492232322693,
+      0.3613230288028717,
+      1.2738827466964722,
+      0.3767174482345581,
+      0.013304647989571095,
+      0.013141898438334465
+    ]
+  }
+}
