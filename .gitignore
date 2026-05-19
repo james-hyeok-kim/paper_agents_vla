@@ -115,6 +115,7 @@ htmlcov/
 # ===== Local memory / agent state (keep schemas, ignore runtime caches) =====
 .claude/agent-memory/**/.cache/
 .claude/agent-memory/**/scratch/
+.claude/worktrees/
 
 # ===== Misc =====
 *.bak
