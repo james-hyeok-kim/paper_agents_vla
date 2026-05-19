@@ -1,0 +1,314 @@
+{
+  "experiment": "CRDS Stage-0 Premise Probe v2",
+  "timestamp_kst": "2026-05-19 12:31 KST",
+  "probe1": {
+    "n_frames": 60,
+    "n_siglip_layers": 27,
+    "pass_threshold": 0.95,
+    "exterior": {
+      "pass": false,
+      "min_cos_leq20": 0.10450544953346252,
+      "cos_at_layer16": 0.8338981866836548,
+      "first_stable_layer": 26,
+      "per_layer": [
+        {
+          "layer": 0,
+          "cos_mean_pool": 0.10450544953346252,
+          "cos_per_token": 0.1324523389339447
+        },
+        {
+          "layer": 1,
+          "cos_mean_pool": 0.222059965133667,
+          "cos_per_token": 0.2147601693868637
+        },
+        {
+          "layer": 2,
+          "cos_mean_pool": 0.42218753695487976,
+          "cos_per_token": 0.34907010197639465
+        },
+        {
+          "layer": 3,
+          "cos_mean_pool": 0.5260273218154907,
+          "cos_per_token": 0.42471376061439514
+        },
+        {
+          "layer": 4,
+          "cos_mean_pool": 0.6922967433929443,
+          "cos_per_token": 0.5444287061691284
+        },
+        {
+          "layer": 5,
+          "cos_mean_pool": 0.72975093126297,
+          "cos_per_token": 0.5714064240455627
+        },
+        {
+          "layer": 6,
+          "cos_mean_pool": 0.7634316086769104,
+          "cos_per_token": 0.6056186556816101
+        },
+        {
+          "layer": 7,
+          "cos_mean_pool": 0.7907720804214478,
+          "cos_per_token": 0.6355348229408264
+        },
+        {
+          "layer": 8,
+          "cos_mean_pool": 0.7931388020515442,
+          "cos_per_token": 0.6469712853431702
+        },
+        {
+          "layer": 9,
+          "cos_mean_pool": 0.7965232729911804,
+          "cos_per_token": 0.6563945412635803
+        },
+        {
+          "layer": 10,
+          "cos_mean_pool": 0.7925741076469421,
+          "cos_per_token": 0.6685026288032532
+        },
+        {
+          "layer": 11,
+          "cos_mean_pool": 0.8048343658447266,
+          "cos_per_token": 0.6926814317703247
+        },
+        {
+          "layer": 12,
+          "cos_mean_pool": 0.8062025904655457,
+          "cos_per_token": 0.7102185487747192
+        },
+        {
+          "layer": 13,
+          "cos_mean_pool": 0.8065642714500427,
+          "cos_per_token": 0.7325742244720459
+        },
+        {
+          "layer": 14,
+          "cos_mean_pool": 0.824091374874115,
+          "cos_per_token": 0.7663124203681946
+        },
+        {
+          "layer": 15,
+          "cos_mean_pool": 0.8338981866836548,
+          "cos_per_token": 0.7923398613929749
+        },
+        {
+          "layer": 16,
+          "cos_mean_pool": 0.8452402949333191,
+          "cos_per_token": 0.8193678259849548
+        },
+        {
+          "layer": 17,
+          "cos_mean_pool": 0.8575367331504822,
+          "cos_per_token": 0.84260094165802
+        },
+        {
+          "layer": 18,
+          "cos_mean_pool": 0.862687349319458,
+          "cos_per_token": 0.8565114140510559
+        },
+        {
+          "layer": 19,
+          "cos_mean_pool": 0.865103542804718,
+          "cos_per_token": 0.8668936491012573
+        },
+        {
+          "layer": 20,
+          "cos_mean_pool": 0.8664384484291077,
+          "cos_per_token": 0.8721209168434143
+        },
+        {
+          "layer": 21,
+          "cos_mean_pool": 0.8626991510391235,
+          "cos_per_token": 0.8716545104980469
+        },
+        {
+          "layer": 22,
+          "cos_mean_pool": 0.8547337055206299,
+          "cos_per_token": 0.8662117719650269
+        },
+        {
+          "layer": 23,
+          "cos_mean_pool": 0.863730251789093,
+          "cos_per_token": 0.8736763596534729
+        },
+        {
+          "layer": 24,
+          "cos_mean_pool": 0.8979942202568054,
+          "cos_per_token": 0.9016664624214172
+        },
+        {
+          "layer": 25,
+          "cos_mean_pool": 0.926470160484314,
+          "cos_per_token": 0.9271308779716492
+        },
+        {
+          "layer": 26,
+          "cos_mean_pool": 1.0,
+          "cos_per_token": 1.0
+        }
+      ]
+    },
+    "wrist": {
+      "pass": false,
+      "min_cos_leq20": 0.12040580809116364,
+      "cos_at_layer16": 0.8620787262916565,
+      "first_stable_layer": 26,
+      "per_layer": [
+        {
+          "layer": 0,
+          "cos_mean_pool": 0.12040580809116364,
+          "cos_per_token": 0.13698384165763855
+        },
+        {
+          "layer": 1,
+          "cos_mean_pool": 0.228738933801651,
+          "cos_per_token": 0.21441401541233063
+        },
+        {
+          "layer": 2,
+          "cos_mean_pool": 0.43179085850715637,
+          "cos_per_token": 0.35489287972450256
+        },
+        {
+          "layer": 3,
+          "cos_mean_pool": 0.5297366976737976,
+          "cos_per_token": 0.43124449253082275
+        },
+        {
+          "layer": 4,
+          "cos_mean_pool": 0.6854231953620911,
+          "cos_per_token": 0.5520354509353638
+        },
+        {
+          "layer": 5,
+          "cos_mean_pool": 0.7200494408607483,
+          "cos_per_token": 0.5807598829269409
+        },
+        {
+          "layer": 6,
+          "cos_mean_pool": 0.7464802861213684,
+          "cos_per_token": 0.6104653477668762
+        },
+        {
+          "layer": 7,
+          "cos_mean_pool": 0.7747951149940491,
+          "cos_per_token": 0.6408925652503967
+        },
+        {
+          "layer": 8,
+          "cos_mean_pool": 0.7777119278907776,
+          "cos_per_token": 0.6500853896141052
+        },
+        {
+          "layer": 9,
+          "cos_mean_pool": 0.7830793261528015,
+          "cos_per_token": 0.6604764461517334
+        },
+        {
+          "layer": 10,
+          "cos_mean_pool": 0.786799967288971,
+          "cos_per_token": 0.6736737489700317
+        },
+        {
+          "layer": 11,
+          "cos_mean_pool": 0.8041351437568665,
+          "cos_per_token": 0.6971386671066284
+        },
+        {
+          "layer": 12,
+          "cos_mean_pool": 0.8123838305473328,
+          "cos_per_token": 0.7169620394706726
+        },
+        {
+          "layer": 13,
+          "cos_mean_pool": 0.8258348703384399,
+          "cos_per_token": 0.7469710111618042
+        },
+        {
+          "layer": 14,
+          "cos_mean_pool": 0.8464131951332092,
+          "cos_per_token": 0.7792402505874634
+        },
+        {
+          "layer": 15,
+          "cos_mean_pool": 0.8620787262916565,
+          "cos_per_token": 0.8067821264266968
+        },
+        {
+          "layer": 16,
+          "cos_mean_pool": 0.8739964962005615,
+          "cos_per_token": 0.8336619138717651
+        },
+        {
+          "layer": 17,
+          "cos_mean_pool": 0.8862673044204712,
+          "cos_per_token": 0.8575204014778137
+        },
+        {
+          "layer": 18,
+          "cos_mean_pool": 0.8917528390884399,
+          "cos_per_token": 0.8729737997055054
+        },
+        {
+          "layer": 19,
+          "cos_mean_pool": 0.8925901651382446,
+          "cos_per_token": 0.8818275332450867
+        },
+        {
+          "layer": 20,
+          "cos_mean_pool": 0.893424928188324,
+          "cos_per_token": 0.8867266774177551
+        },
+        {
+          "layer": 21,
+          "cos_mean_pool": 0.890867292881012,
+          "cos_per_token": 0.8880004286766052
+        },
+        {
+          "layer": 22,
+          "cos_mean_pool": 0.8807249665260315,
+          "cos_per_token": 0.8820616602897644
+        },
+        {
+          "layer": 23,
+          "cos_mean_pool": 0.8870580792427063,
+          "cos_per_token": 0.8894677758216858
+        },
+        {
+          "layer": 24,
+          "cos_mean_pool": 0.911908745765686,
+          "cos_per_token": 0.9126958250999451
+        },
+        {
+          "layer": 25,
+          "cos_mean_pool": 0.9396581053733826,
+          "cos_per_token": 0.9396858215332031
+        },
+        {
+          "layer": 26,
+          "cos_mean_pool": 1.0,
+          "cos_per_token": 1.0
+        }
+      ]
+    },
+    "verdict": "FAIL"
+  },
+  "probe2": {
+    "description": "Vision contribution: inference-time action MSE ablation",
+    "n_frames": 128,
+    "metric": "MSE between predicted first-action and GT action",
+    "mse_real": 0.7755814034026116,
+    "mse_zero_all_vision": 0.8253053551889025,
+    "mse_zero_wrist_only": 0.6888740304857492,
+    "ratio_all_vision": 1.064111841217625,
+    "ratio_wrist_only": 0.8882033884045415,
+    "pass_threshold_ratio": 1.3,
+    "verdict": "FAIL"
+  },
+  "overall": {
+    "verdict": "FAIL-both",
+    "recommendation": "CRDS \ud3d0\uae30 \uad8c\uc7a5 \u2014 probe 1 & 2 \ubaa8\ub450 FAIL",
+    "probe1_wrist_pass": false,
+    "probe2_pass": false
+  }
+}

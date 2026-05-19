@@ -2,7 +2,7 @@
 
 **Purpose**: 새 아이디어 생성 시 반드시 이 파일을 읽고, 아래 mechanism family에 속하는 아이디어는 **절대 생성하지 마세요**. literature-checker NO-GO와 idea-validator FAIL 양쪽 결과를 통합한 목록입니다.
 
-**Last updated**: 2026-05-15
+**Last updated**: 2026-05-19
 
 ---
 
@@ -23,6 +23,8 @@
 | 11 | Single/multi-view visual token pruning (similarity-based) | VLA-Pruner, TEAM-VLA, Compressor-VLA, VLA-ADP, BFA++ (view-level) | `landscape/vla-multiview-token-pruning-2025.md` |
 | 12 | Cross-view binary view-granularity selection | **BFA++** (2602.20566) | (literature finding) |
 | 13 | Intra-chunk attention invariance reframing (decreasing entropy by position) | AutoHorizon found invariance; PoC failed to reproduce in tiny ACT | `abandoned/cp-sparse.md` |
+| 14 | ViT MLP intermediate bottleneck (V-MIB family) | InfoPrune (2511.19518) + Diversity-Guided MLP Reduction (2506.08591) + Compressor-VLA (2511.18950) | `abandoned/v-mib.md` |
+| 15 | **Static vision-token withdrawal from LLM residual stream at fixed layer K (SVEE family)** | **VTW** (arXiv:2405.05803, AAAI 2025) — Llama-2-7B family, KL-divergence-chosen static K, KV-cache-compatible drop. HiDrop (2602.23699), V²Drop (2509.01552), LUVC (2512.09010), FREE (ACL 2025) cover adjacent token-pruning axes | `abandoned/svee.md` (pending move) |
 
 ---
 
@@ -40,6 +42,8 @@
 - **PUG-Vision** — Proprio-Uncertainty-Gated Vision Compute
 - **LIC-Chunk** — Language-Instruction-Conditioned Variable Chunk Length
 - **CP-Sparse** — Chunk-Position-Aware Sparse Attention (PoC failed core hypothesis)
+- **V-MIB** — ViT MLP Intermediate Bottleneck
+- **SVEE** — Static Vision-token Early-Exit (= VTW on OpenVLA-OFT, no action-specific mechanism)
 
 ---
 

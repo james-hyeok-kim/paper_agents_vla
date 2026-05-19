@@ -6,8 +6,10 @@
 - [CPR-Distill](active/cpr-distill.md) — Contact-phase reweighted SE(3) distillation. PoC PASS (67x specificity). Validator 6.5/10.
 - [XV-Dedup](active/xv-dedup.md) — Cross-view token deduplication (LSH-based). PoC partial pass (70% overlap). Validator 6.0/10.
 
-## Pending Ideas (생성됨, literature-checker 대기, 0개)
-- (없음)
+## Pending Ideas (생성됨, literature-checker 대기, 3개) — Round 6 (Object-Centric pivot)
+- [OCB](pending/ocb.md) — Object-Centric Bottleneck via Slot Attention (architectural, sham-robust by iter-competition)
+- [RGV](pending/rgv.md) — Receptacle-Goal-Vector aux training head (inference-free, sham-robust by label-source)
+- [STG](pending/stg.md) — Spatial-Token Gating with object-supervised saliency (backup; risk: BLACKLIST #11 adjacency)
 
 ## Abandoned Ideas (NO-GO from literature 또는 FAIL from validator, 10개)
 - [ASMP-Q](abandoned/asmp-q.md) — Action-Sensitivity Mixed-Precision Quantization (QVLA에 선점)
