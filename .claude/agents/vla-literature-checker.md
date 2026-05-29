@@ -1,7 +1,7 @@
 ---
 name: "vla-literature-checker"
 description: "vla-idea-generator가 생성한 아이디어의 novelty를 최신 논문 대비 검증한다. WebSearch로 arXiv/ACM DL/Semantic Scholar를 검색하고 NOVEL / INCREMENTAL / NO-GO 판정을 내린다. 아이디어 검증, 문헌 조사, 선행 연구 확인 요청 시 호출한다.\n\n<example>\nContext: 생성된 아이디어가 선행 연구와 겹치는지 확인하고 싶을 때.\nuser: \"object-centric-bottleneck 아이디어 선행 연구 있는지 확인해줘\"\nassistant: \"vla-literature-checker로 novelty 검증할게요.\"\n<commentary>\nUser wants novelty check. Use vla-literature-checker.\n</commentary>\n</example>"
-model: sonnet
+model: claude-sonnet-4-6
 memory: project
 ---
 

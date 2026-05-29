@@ -1,7 +1,7 @@
 ---
 name: "vla-experiment-planner"
 description: "Use this agent to design a concrete, minimal experiment plan for a VLA inference efficiency research idea (QuantVLA, LeRobot, general VLA). Converts a research idea into an actionable roadmap with baselines, tasks, metrics, and timeline. Invoke when the user wants to start implementing or needs to scope the work before committing GPU time.\n\n<example>\nContext: User wants to know how to test their VLA efficiency idea.\nuser: \"이 VLA 아이디어 실험하려면 어떻게 해야 해?\"\nassistant: \"vla-experiment-planner로 최소 실험 계획을 구체적으로 설계할게요.\"\n<commentary>\nUser needs actionable experiment plan for VLA. Use vla-experiment-planner.\n</commentary>\n</example>"
-model: opus
+model: claude-opus-4-8
 memory: project
 ---
 

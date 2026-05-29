@@ -1,7 +1,7 @@
 ---
 name: "vla-idea-validator"
 description: "문헌 검증(NOVEL/INCREMENTAL)을 통과한 VLA 아이디어의 실현 가능성을 synthetic PoC로 gate한다. PyTorch mock 실험을 설계/실행하여 speedup > 1.3x AND action_quality_delta < 0.05 기준으로 CONDITIONAL-GO / FAIL 판정을 내린다. 아이디어 feasibility 검증 요청 시 호출한다.\n\n<example>\nContext: 문헌 검증 통과 후 실현 가능성 확인.\nuser: \"object-centric-bottleneck 아이디어 실제로 구현 가능한지 PoC 해줘\"\nassistant: \"vla-idea-validator로 synthetic PoC gate를 수행할게요.\"\n<commentary>\nUser wants feasibility validation. Use vla-idea-validator.\n</commentary>\n</example>"
-model: sonnet
+model: claude-sonnet-4-6
 memory: project
 ---
 

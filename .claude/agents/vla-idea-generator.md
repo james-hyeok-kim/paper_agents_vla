@@ -1,7 +1,7 @@
 ---
 name: "vla-idea-generator"
 description: "VLA inference efficiency 분야의 novel 연구 아이디어를 생성한다. BLACKLIST.md를 반드시 먼저 확인한 뒤 아이디어를 제안하고, pending/ 폴더에 저장한다. 아이디어 생성 요청, 새로운 연구 방향 탐색, 브레인스토밍 세션에서 호출한다.\n\n<example>\nContext: 연구 방향을 새로 탐색하고 싶을 때.\nuser: \"VLA inference 효율화 쪽에서 논문 쓸 만한 아이디어 뭐가 있을까?\"\nassistant: \"vla-idea-generator로 BLACKLIST 확인 후 novel 아이디어를 생성할게요.\"\n<commentary>\nUser wants research ideas. Use vla-idea-generator.\n</commentary>\n</example>\n\n<example>\nContext: 특정 병목에 집중한 아이디어 요청.\nuser: \"vision token 쪽에서 VLA-specific한 뭔가 없을까?\"\nassistant: \"vla-idea-generator가 vision token 효율화 각도로 아이디어를 생성할게요.\"\n<commentary>\nUser wants ideas focused on vision tokens. Use vla-idea-generator.\n</commentary>\n</example>"
-model: opus
+model: claude-opus-4-8
 memory: project
 ---
 
